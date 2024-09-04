@@ -18,6 +18,13 @@ class NoonController extends Controller
 
     public function createInvoice(Request $request)
     {
+          // Assuming you are passing the package_id from the request, get it from the request
+    $packageId = $request->input('package_id');
+
+    // Store the package_id in the session
+     session(['package_id' => $packageId]);
+
+
         $result = $this->noonService->createOrder(550, 'AED');
 
         // $result = $this->noonService->createInvoice($invoiceData);
@@ -31,7 +38,7 @@ class NoonController extends Controller
     {
         return view('pages.cancel_network');
     }
-    
+
    public function network_success(Request $request)
 {
     // Get the order reference from the query parameters
@@ -45,6 +52,8 @@ class NoonController extends Controller
 
     // Check if the request was successful
     if ($orderStatus['success']==true) {
+        $packageId = session('package_id');
+
         $check_status=$orderStatus['data']['_embedded']['payment'][0]['state'];
             switch ($check_status) {
                 case 'CAPTURED':
@@ -83,6 +92,8 @@ class NoonController extends Controller
 
         // Create a new Transaction record
         Transaction::create([
+            'user_id' => $user->id,
+            'rate_id'=>$packageId,
             'referance' => $data['reference'],
             'emailAddress' => $data['emailAddress'],
             'firstName' => $billingAddress['firstName'],
@@ -94,7 +105,7 @@ class NoonController extends Controller
             'currency' => $currency,
             'status' => $data['_embedded']['payment'][0]['state'],
             'orderReference' => $data['reference'],
-            'user_id' => $user->id,
+
         ]);
 
         // Return the data as a JSON response
@@ -113,7 +124,7 @@ class NoonController extends Controller
      return view('pages.network_success',compact('status','format_amt'));
 }
 
-    
+
      public function networkWebhook(Request $request)
     {
         // Get the raw JSON input

@@ -6,6 +6,10 @@
 <link rel="stylesheet" href="{{ asset('style/package.css') }}">
 @section('content')
 <div class="container">
+        <!-- Loading Spinner (Initially Hidden) -->
+<div id="loading" style="display: none">
+    <img src="{{ asset('images/loading.gif') }}" alt="Loading...">
+</div>
     <div class="profile">
        <div class="section-content">
         <h1 class="title">Welcome to FJ Education</h1>
@@ -28,7 +32,7 @@
             @if($purchased)
                 <button class="package-buy-d" disabled>Already purchased</button>
             @else
-                <button class="package-buy">Buy package</button>
+                <button class="package-buy create-pay-link" data-package-id="{{$package->id}}">Buy package</button>
             @endif
             </div>
             @endforeach
@@ -39,4 +43,54 @@
 </div>
 
 
+@endsection
+@section('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // console.log('Script loaded');
+        const loadingElement = document.getElementById('loading');
+
+    // Handle click for logged-in users to create pay link
+    document.querySelectorAll('.create-pay-link').forEach(function (element) {
+        // alert()
+        element.addEventListener('click', function () {
+            var packageId = this.getAttribute('data-package-id');
+
+            // Show the loading GIF
+            loadingElement.style.display = 'block';
+            // AJAX call to create a pay link
+            fetch('/create-pay-link', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({
+                    package_id: packageId,
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Redirect to payment URL or do something else
+                    // console.log()
+                    window.location.href = data.url;
+                } else {
+                    // Hide the loading GIF if there's an error
+                    loadingElement.style.display = 'none';
+                    console.error('Error:', data.message);
+                }
+            })
+            .catch(error => {
+                // Hide the loading GIF if there's an error
+                loadingElement.style.display = 'none';
+                console.error('Error:', error);
+            });
+        });
+    });
+
+
+});
+
+</script>
 @endsection

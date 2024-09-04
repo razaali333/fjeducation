@@ -52,3 +52,20 @@
     font-size: 16px;
     font-family: 'DM Sans';
 }
+.package-buy-d {
+    margin-top: 16px;
+    background: #dedede;
+    height: 60px;
+    border: none;
+    outline: none;
+    color: #000000;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: .3s;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'DM Sans';
+}

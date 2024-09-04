@@ -8,7 +8,7 @@ use App\Models\Content;
 use App\Models\ContentCategory;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Rate;
 use MoonShine\Enums\PageType;
 use MoonShine\Exceptions\FieldException;
 use MoonShine\Fields\File;
@@ -73,7 +73,16 @@ class ContentBookResource extends ContentResource
                     ]),
                 File::make(__('moonshine::ui.fields.book'), 'file')->disk('public')
                     ->hideOnIndex()
-                    ->allowedExtensions(['pdf', 'txt', 'docx', 'doc', 'odt'])
+                    ->allowedExtensions(['pdf', 'txt', 'docx', 'doc', 'odt']),
+            Select::make('Package', 'package_id')
+            ->options(function () {
+                // Get all categories (since there is no parent_id column)
+                return ['' => 'Select Package'] + Rate::pluck('title', 'id')->toArray();
+            })
+            ->nullable(false) // Make this required
+            ->required()
+            ->searchable()
+            ->placeholder('Select Package'),
             ]),
         ];
     }

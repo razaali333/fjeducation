@@ -25,7 +25,7 @@
             </p>
             @if(Auth::check())
             <!-- AJAX call to create a pay link -->
-            <a href="javascript:void(0);" class="card-button create-pay-link"  data-book-id="{{ $book->id }}">Get this item</a>
+            <a href="javascript:void(0);" class="card-button create-pay-link"  data-package-id="{{ $book->package_id }}"  data-book-id="{{ $book->id }}">Get this item</a>
         @else
             <!-- Show login modal if not authenticated -->
             <a href="javascript:void(0);"  id="account-link" class="card-button account-link">Get this item</a>
@@ -42,50 +42,67 @@
 @section('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // console.log('Script loaded');
-        const loadingElement = document.getElementById('loading');
 
     // Handle click for logged-in users to create pay link
     document.querySelectorAll('.create-pay-link').forEach(function (element) {
         // alert()
         element.addEventListener('click', function () {
-            var bookId = this.getAttribute('data-book-id');
+             window.location.href = "{{url('packages')}}";
 
-            // Show the loading GIF
-            loadingElement.style.display = 'block';
-            // AJAX call to create a pay link
-            fetch('/create-pay-link', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: JSON.stringify({
-                    book_id: bookId
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Redirect to payment URL or do something else
-                    // console.log()
-                    window.location.href = data.url;
-                } else {
-                    // Hide the loading GIF if there's an error
-                    loadingElement.style.display = 'none';
-                    console.error('Error:', data.message);
-                }
-            })
-            .catch(error => {
-                // Hide the loading GIF if there's an error
-                loadingElement.style.display = 'none';
-                console.error('Error:', error);
-            });
         });
     });
 
 
 });
+
+
+
+//     document.addEventListener('DOMContentLoaded', function () {
+//         // console.log('Script loaded');
+//         const loadingElement = document.getElementById('loading');
+
+//     // Handle click for logged-in users to create pay link
+//     document.querySelectorAll('.create-pay-link').forEach(function (element) {
+//         // alert()
+//         element.addEventListener('click', function () {
+//             var bookId = this.getAttribute('data-book-id');
+//             var packageId = this.getAttribute('data-package-id');
+//             // Show the loading GIF
+//             loadingElement.style.display = 'block';
+//             // AJAX call to create a pay link
+//             fetch('/create-pay-link', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                     'X-CSRF-TOKEN': '{{ csrf_token() }}'
+//                 },
+//                 body: JSON.stringify({
+//                     book_id: bookId,
+//                     package_id: packageId
+//                 })
+//             })
+//             .then(response => response.json())
+//             .then(data => {
+//                 if (data.success) {
+//                     // Redirect to payment URL or do something else
+//                     // console.log()
+//                     window.location.href = data.url;
+//                 } else {
+//                     // Hide the loading GIF if there's an error
+//                     loadingElement.style.display = 'none';
+//                     console.error('Error:', data.message);
+//                 }
+//             })
+//             .catch(error => {
+//                 // Hide the loading GIF if there's an error
+//                 loadingElement.style.display = 'none';
+//                 console.error('Error:', error);
+//             });
+//         });
+//     });
+
+
+// });
 
 </script>
 @endsection
