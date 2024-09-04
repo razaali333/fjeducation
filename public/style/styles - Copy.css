@@ -1,0 +1,610 @@
+/* styles.css */
+/* Import DM Sans font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background-color: #0c0b30; /* Background color similar to the image */
+}
+/* General header and navbar styling */
+header {
+    background-color: #0c0b30; /* Navbar background color */
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo { /* Adjust size as needed */
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.brand-name {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Desktop Menu */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navbar-menu li a:hover {
+    color: #00C4CC; /* Hover color */
+}
+
+.navbar-account {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-account img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+/* Mobile Menu */
+.navbar-toggle {
+    display: none; /* Hide toggle by default */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust the styling for the navbar toggle */
+.navbar-toggle img {
+    max-width: 100%;
+    cursor: pointer;
+}
+
+/* Hide the mobile menu by default */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #0c0b30;
+        width: calc(100% - 40px);
+        text-align: right;
+        gap: 20px;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-account {
+        display: none; /* Hide account icon on mobile */
+    }
+    .navbar-toggle {
+        display: flex; /* Show hamburger menu on mobile */
+    }
+
+    .navbar-account {
+        display: none; /* Hide account icon on mobile */
+    }
+}
+
+
+/* Styling for active menu state */
+.navbar-menu.active li a {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.account-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.account-link:hover {
+    color: #00C4CC; /* Hover color */
+}
+
+.account-icon {
+    height: 24px; /* Adjust size as needed */
+}
+
+
+.account {
+    font-size: 18px;
+    color: white;
+}
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eaf6ff;
+    /* padding: 50px; */
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 40px auto;
+    color: #0c0b30;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 50%;
+    /* position: relative;
+    bottom: 110px;
+    left: 10px; */
+    padding-left: 40px;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #2ec4b6;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 70%;
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+.cta-button:hover {
+    background-color: #009b99;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    position: relative;
+    top: 10px;
+}
+
+.opportunities {
+    position: relative;
+    background-color: #0c0b30;
+    padding: 20px 0px;
+    text-align: center;
+    color: #fff;
+}
+
+.wave-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+.wave-background img {
+    width: 100%;
+    height: auto;
+}
+
+.opportunities-content {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.opportunities-content h2 {
+    font-size: 36px;
+    color: #00C4CC;
+}
+
+.opportunities-content p {
+    margin-top: 24px;
+    color: #e4f1f8;
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 850px;
+    text-align: center;
+}
+
+
+
+/* Card design */
+.cards-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cards-card {
+    flex: 1;
+    margin: 0 10px;
+    width: 100%;
+    background: #2ec4b6;
+    padding: 16px;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cards-card h3 {
+    font-size: 20px;
+    color: #fff;
+}
+
+.cards-card img {
+    height: auto;
+    border-radius: 10px;
+    /* margin: 20px 0; */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+}
+
+.cta-button1 {
+    text-decoration: none;
+    background: #0c042e;
+    padding: 12px 14px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 8px;
+    width: 120px;
+    position: relative;
+    display: block;
+}
+
+.cta-button:hover {
+    background-color: #007777;
+}
+
+.market-research {
+    background-color: #0c0b30;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.market-research h2 {
+    font-size: 36px;
+    color: #00C4CC;
+}
+
+.market-research p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 20px auto 0;
+    color: #e4f1f8;
+}
+
+.arrow-btn{
+    height: auto !important;
+    position: absolute !important;
+    bottom: 35% !important;
+    right: 5% !important;
+}
+.features {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.feature {
+    background-color: #1A1B30;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #3AD4C5;
+    width: 250px;
+    text-align: left;
+}
+
+.feature h3 {
+    font-size: 20px;
+}
+
+.cards-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px;
+    color: #0c0b30;
+}
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    margin: 0 auto 10px;
+}
+
+.card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 30px;
+    color: #5d5a6f;
+    text-align: center;
+}
+.card-icon img{
+    width: 50px;
+}
+
+
+
+.faq-section {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 36px;
+    color: #00C4CC; /* Title color */
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    background-color: #fff;
+    color: #0c0b30;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.faq-question {
+    background-color: #fff;
+    color: #0c0b30;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 20px 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.faq-icon {
+    font-size: 30px;
+    font-weight: normal;
+    color: #6f6c8f;
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 20px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.svg-wave-container {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 0;
+}
+
+.svg-wave {
+    width: 97%;
+    height: auto;
+}
+
+
+.signup-section {
+    position: relative;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    background-color: #2ec4b6;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.signup-content {
+    z-index: 1;
+    width: 50%;
+}
+
+.signup-content h2 {
+    color: #fff;
+    font-size: 40px;
+    line-height: 55px;
+    font-weight: 700;
+    max-width: 660px;
+    text-align: center;
+}
+
+.signup-content p {
+    color: #ffffffb3;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.signup-button {
+    background-color: #fff;
+    color: #0c042e;
+    border: none;
+    padding: 16px 60px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-button:hover {
+    background-color: #f0f0f0;
+}
+
+.decorative-images {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 0;
+}
+
+.student {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.student1 {
+    position: absolute;
+    left: 10%;
+    top: -100px;
+}
+
+.student2 {
+    position: absolute;
+    left: 20%;
+    bottom: -25px;
+}
+
+.student3 {
+    position: absolute;
+    left: 12%;
+    bottom: -110px;
+}
+
+.student4 {
+    position: absolute;
+    right: 10%;
+    top: -100px;
+}
+.student5 {
+    position: absolute;
+    right: 15%;
+    top: -10px;
+}
+
+.books {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    /* padding-right: 5px; */
+    object-fit: contain;
+    max-height: 100%;
+    border-radius: 20px;
+}
+.footer-section {
+    background-color: #0c0b30;
+    /* padding: 20px; */
+    /* text-align: center; */
+    color: #fff;
+    width: 82%;
+    margin: auto;
+}
+
+.payment-icons {
+    display: flex;
+    /* justify-content: center; */
+    margin-bottom: 20px;
+}
+
+.payment-icons .icon {
+    margin: 0 10px;
+    max-width: 100%;
+    max-height: 45px;
+}
+
+.footer-links {
+    display: flex;
+    /* justify-content: center; */
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-address p {
+    margin: 5px 0;
+    font-size: 14px;
+    padding-left: 10px;
+    line-height: 1.4rem;
+}

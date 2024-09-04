@@ -1,0 +1,189 @@
+/* Basic Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+    top: 120px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1c1c3a;
+    text-align: left;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+}
+
+.input-group input,select {
+    width: 100%;
+    padding: 12px 40px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    box-sizing: border-box; /* Ensure that padding and width are contained */
+}
+.input-group textarea {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    resize: none;
+    padding: 5px;
+    box-sizing: border-box; /* Ensure that padding and width are contained */
+}
+
+.btn {
+    background-color: #9135f8;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+}
+
+.links a {
+    text-decoration: none;
+    color: #666;
+}
+
+.links a strong {
+    color: #9135f8;
+}
+
+.forgot-password {
+    color: #9135f8;
+}
+
+.forgot-password:hover, .links a strong:hover {
+    text-decoration: underline;
+}
+.modal-content form label{
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.model-close{
+    float: right;
+    cursor: pointer;
+}
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    accent-color: #000; /* Set checkbox color */
+}
+
+.terms-checkbox label {
+    color: #333;
+}
+
+.terms-checkbox a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.terms-checkbox a:hover {
+    text-decoration: underline;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+    text-align: left;
+    position: relative;
+    bottom: 10px;
+    width: 90%;
+}
+.alert {
+    padding: 10px;
+    background-color: #f8d7da7a;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    word-wrap: anywhere;
+}
+
+.alert .close-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #721c24;
+    font-weight: bold;
+    cursor: pointer;
+    top: 0;
+}
+.select2-container {
+    width: 100% !important;
+}

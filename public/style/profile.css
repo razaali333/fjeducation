@@ -1,0 +1,127 @@
+body .section-content {
+    max-width: 1280px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profile .section-content {
+    justify-content: center;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile {
+    margin-top: 64px;
+}
+.profile .section-content .title {
+    font-size: 40px;
+    color: #9135f8;
+    font-weight: 500;
+}
+.profile .section-content .profile-tabs {
+    width: 100%;
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile .section-content .profile-tabs a.active {
+    color: #fff;
+    background: #9135f8;
+}
+.profile .section-content .profile-tabs a {
+    background: #fff;
+    padding: 20px 50px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #0a033c;
+    text-decoration: none;
+}
+.profile .section-content .profile-tabs a {
+    background: #fff;
+    padding: 20px 50px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #0a033c;
+}
+/* Title styling */
+.title {
+    font-size: 32px;
+    color: #8A2BE2;
+    margin-bottom: 20px;
+}
+
+.profile .section-content .m-form {
+    margin-top: 32px;
+    background: #fff;
+    padding: 32px;
+    border-radius: 18px;
+    width: 85%;
+}
+.profile .section-content .m-form .profile-title {
+    color: #0a033c;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.personal .m-form .form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.personal .m-form .form-item label {
+    font-size: 16px;
+    font-weight: 500;
+}
+.personal .m-form .form-item .input-group {
+    position: relative;
+}
+.personal .m-form .form-item .input-group img {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+}
+
+.personal .m-form .form-item .input-group input {
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #dedde4;
+    padding-left: 44px;
+    background: white;
+}
+.personal .m-form .m-action {
+    height: 50px;
+    background: #9135f8;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .3s;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .profile .section-content .title
+    {
+        font-size: 28px;
+    }
+    .profile .section-content .profile-tabs a {
+        padding: 16px 40px !important;
+    }
+    .profile .section-content .profile-tabs {
+        gap: 20px;
+        overflow: scroll;
+        padding-bottom: 24px;
+    }
+    .section-content {
+        max-width: calc(100% - 32px) !important;
+    }
+}

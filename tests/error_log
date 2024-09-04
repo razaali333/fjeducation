@@ -1,0 +1,40 @@
+[29-Aug-2024 16:36:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php on line 7
+[29-Aug-2024 16:36:14 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php on line 7
+[29-Aug-2024 16:36:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php on line 7
+[29-Aug-2024 16:36:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php on line 7
+[29-Aug-2024 16:36:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php on line 7
+[30-Aug-2024 06:05:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php on line 7
+[30-Aug-2024 06:05:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php on line 7
+[30-Aug-2024 06:48:12 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php on line 7
+[30-Aug-2024 06:48:13 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php on line 7
+[30-Aug-2024 06:49:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home2/gogreenl/ejeducation.gogreenlifepharmacy.com/tests/TestCase.php on line 7
